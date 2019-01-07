@@ -9,15 +9,16 @@
 </head>
 
 <body>
-  <h1>Function Literal Notation or function object or An Anonymous Function using JavaScript Functions</h1>
-  <h3>We are using below onclick function for Square: 10</h3>
-  <input type="button" value="Add Dynamic arguments" onclick="f1(10)">
+  <h1>Self Executing Function or Self Invoking Function using JavaScript Functions</h1>
+  <h3>We are loading below function for Self Excute</h3>
+  (function(a, b) {
+    alert("The sum is : " + (a + b).toString());
+  })(10, 20);
 </body>
-  <script type="text/javascript">
-    var f1 = function(a) {
-      a = a * a;
-      alert("Square is : " + a.toString());
-    }
-  </script>
+<script type="text/javascript">
+  (function(a, b) {
+    alert("The sum is : " + (a + b).toString());
+  })(10, 20);
+</script>
 
 </html>

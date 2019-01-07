@@ -17,14 +17,52 @@
   </p>
 </body>
 <script type="text/javascript">
+  // function doProcess(a,b){
+  // 	function DisplaySum(){
+  // 		alert("Sum is : " + (a + b).toString() );
+  // 	}
+  // 	function DisplayDiff(){
+  // 		alert("Diff is : " + (a - b).toString() );
+  // 	}
+  // 	DisplaySum();
+  // 	return DisplayDiff;// return the function  itself
+  // }
+  //
+  // var a = doProcess(10,40);
+  // a();
+
+  // function doProcess(a,b){
+  // 	function DisplaySum(){
+  // 		alert("Sum is : " + (a + b).toString() );
+  // 	}
+  // 	function DisplayDiff(){
+  // 		alert("Diff is : " + (a - b).toString() );
+  // 	}
+  // 	DisplaySum();
+  // 	return DisplayDiff();// it will execute function but not return function
+  // }
+  //
+  // var a = doProcess(10,40);
+  // console.log("a" ,a)
+
   function doProcess(a, b) {
-    function displaySum() {
+    function DisplaySum() {
       alert("Sum is : " + (a + b).toString());
     }
-    displaySum();
+
+    DisplaySum();
+    // case : 1
+    //return function(){
+    //	alert("Diff is : " + (a - b).toString() );
+    // };// return the function  itself with old a,b arguments
+    return function(a, b) {
+      alert("Diff is : " + (a - b).toString());
+    }; // return the function  itself
   }
-  doProcess(10, 30)
-  // displaySum()// it will give error
+
+  var a = doProcess(10, 40);
+  // a();// it will take old a and b values case 1
+  a(50, 30); // it will take new a and b values
 </script>
 
 </html>

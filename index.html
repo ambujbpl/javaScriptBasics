@@ -9,19 +9,19 @@
 </head>
 
 <body>
-  <h1>Array.forEach Function using JavaScript Functions</h1>
+  <h1>Array.map Function using JavaScript Functions</h1>
   <p>
-    Array.forEach Function will iterate a loop upto Array.length
+    Array.map Function will return a copy of Array with some Array operation.
   </p>
 </body>
 <script type="text/javascript">
-  function addIn(a, i, arr) {
-    arr[i] = (a + 1)
+  function MultyIn(a, i, arr) {
+    return a * a;
   }
   var arr = [1, 2, 3, 4, 5]
-  alert("Before arr : "+ arr);
-  arr.forEach(addIn)
-  alert("After arr : " + arr);
+  alert("Arr arr : " + arr);
+  var b = arr.map(MultyIn);
+  alert("Arr B : " + b);
 </script>
 
 </html>

@@ -1,0 +1,286 @@
+JavaScript New
+1 Add Dynamic arguments using javascript
+onclick="ShowSum(10,11,23,14)"
+function ShowSum(){
+	var s=0;
+	for (var i = 0 ; i < arguments.length ; i++) s += arguments[i]
+	alert("sum is : " + s.toString());
+}
+
+2 onclick="alert(ShowDiff(10,20).toString())"
+function ShowDiff(a,b){
+	var d=0;
+	d = a-b;
+	return d
+}
+
+
+3 Function Literal Notation or function object or An Anonymous Function
+var f1 = function(a){
+	a = a*a;
+	alert("Square is : " + a.toString());
+}
+
+onclick="f1(10)"
+
+
+4 Self Executing Function or Self Invoking Function using JavaScript Functions
+   It will execute automatically at the time of script will load.
+(function () { 
+	alert("this is test fun") 
+})();
+
+With parameters
+(function (a,b) { 
+	alert("this is test fun for sum : " + (a+b).toString()); 
+})(10,20);
+
+
+With return value parameters
+var c = alert((function (a,b) { 
+	return a+b; 
+})(10,20));
+
+
+
+5  Callback Function
+
+function ShowSum(a,b, d){
+	alert("Sum is : " + (a+b).toString());
+	d(a,b);
+}
+function ShowDifference(a,b){
+	alert("Diff is : " + (a-b).toString());
+}
+function ShowMul(a,b){
+	alert("Multy is : " + (a*b).toString());
+}
+
+ShowSum(10,20,ShowDifference)
+ShowSum(10,20,ShowMul)
+
+
+6 Array.every Function
+Array every function will return a boolean
+
+-if arr have all elements is even return true
+-else any one of element is odd it will return false
+
+function IsEven(a,i, arr){
+	return ((a%2 == 0) ? true : false)
+}
+var arr = [1,2,3,4,5]
+alert(arr.every(IsEven))
+
+Or Same o/p will gnerate using An Anonymous Function
+
+alert([10,20,49,58].every(function(a,i, arr){
+	return ((a%2 == 0) ? true : false)
+}))
+
+
+7 Array.some Function
+if arr have any elements is even return true
+else return false
+function IsEven(a,i, arr){
+	return ((a%2 == 0) ? true : false)
+}
+
+
+var arr = [1,2,3,4,5]
+alert(arr.some(IsEven))
+
+8 Array.filter Function
+
+function IsEven(a,i, arr){
+	return ((a%2 == 0) ? true : false)
+}
+var arr = [1,2,3,4,5]
+var filterArr = arr.filter(IsEven)
+alert("filterArr : " + filterArr);
+
+
+Or using annominus function 
+
+var filterArr = [10,20,49,58].filter(function(a,i, arr){
+	return ((a%2 == 0) ? true : false)
+})
+alert("filterArr : " + filterArr);
+
+
+9 Array.forEach Function
+function addIn(a,i, arr){
+	arr[i] = (a+1)
+}
+var arr = [1,2,3,4,5]
+arr.forEach(addIn)
+alert("Arr : " + arr);
+
+
+10 Array.map Function
+function MultyIn(a,i, arr){
+	return a*a;
+}
+var arr = [1,2,3,4,5]
+var b = arr.map(MultyIn);
+alert("Arr B : " + b);
+
+
+
+11 Nested Function
+Note:- Nested function will not call directly in globly, it will call in local scope only.
+Means DisplaySum(); will call only inside doProcess() function.
+function doProcess(a,b){
+	function DisplaySum(){
+		alert("Sum is : " + (a + b).toString() );
+	}
+	DisplaySum();
+}
+doProcess(10,20)
+
+12 Function returning Function
+Note:- Nested function want call directly outside it will call in local scope only.
+Means DisplaySum(); will call only inside doProcess() function.
+function doProcess(a,b){
+	function DisplaySum(){
+		alert("Sum is : " + (a + b).toString() );
+	}	
+	function DisplayDiff(){
+		alert("Diff is : " + (a - b).toString() );
+	}
+	DisplaySum();
+	return DisplayDiff;// return the function  itself
+}
+
+var a = doProcess(10,40);
+a();
+
+
+Note :- if 
+function doProcess(a,b){
+	function DisplaySum(){
+		alert("Sum is : " + (a + b).toString() );
+	}	
+	function DisplayDiff(){
+		alert("Diff is : " + (a - b).toString() );
+	}
+	DisplaySum();
+	return DisplayDiff();// it will execute function but not return function
+}
+
+var a = doProcess(10,40);
+console.log("a" ,a)
+
+
+
+
+13 Function returning Function
+Note:- Nested function want call directly outside it will call in local scope only.
+Means DisplaySum(); will call only inside doProcess() function.
+function doProcess(a,b){
+	function DisplaySum(){
+		alert("Sum is : " + (a + b).toString() );
+	}	
+	
+	DisplaySum();
+	// case : 1
+	//return function(){
+	//	alert("Diff is : " + (a - b).toString() );
+	// };// return the function  itself with old a,b arguments
+	return function(a,b){
+		alert("Diff is : " + (a - b).toString() );
+	};// return the function  itself
+}
+
+var a = doProcess(10,40);
+a();// it will take old a and b values
+a(50,30);// it will take new a and b values
+
+
+
+
+
+14 Function reassigning 
+function doProcess(a,b){
+	function DisplaySum(){
+		alert("Sum is : " + (a + b).toString() );
+	}	
+	
+	DisplaySum(); 
+	doProcess = function(a,b){
+		alert("Diff is : " + (a - b).toString() );
+	};// return the New Defination of doProcess function
+}
+
+doProcess(10,40);// only add two number
+doProcess(10,80);// only diff two number
+doProcess(10,10);// only diff two number
+
+
+
+15 Array of Function
+var arr = [];
+arr[0] = function(){
+console.log("arr[0] : ", arr[0])
+}
+arr[1] = function(){
+console.log("arr[1] : ", arr[1])
+}
+arr[2] = function(){
+console.log("arr[2] : ", arr[2])}
+//arr[0]();
+//arr[1]();
+//arr[2]();
+if(typeof arr[2] === "function"){
+arr[2]();
+}
+
+
+
+16 Attaching Function to Events
+
+function AttachedEvent(){
+  var fBtn = document.getElementById("fBtn");
+  if(fBtn){
+    fBtn.onclick = function(){
+      alert("Now i am btn 3");
+    }
+    fBtn.value = "Now This is Third Btn";
+  }
+}
+  </script>
+  <input type="button" value="This is first Btn" id="fBtn">
+  <input type="button" value="This is Second Btn" id="sBtn" onclick="AttachedEvent()">
+
+
+16 Closure in javascript
+
+function generateFun(n){
+var current = 0;
+var max = n;
+	return function(){
+  		return (current < max ? current ++ : current)
+	}
+}
+
+var genNow;
+genNow = generateFun(5);
+alert(genNow());
+alert(genNow());
+alert(genNow());
+alert(genNow());
+alert(genNow());
+alert(genNow());
+alert(genNow());
+
+
+
+17 Built in Function Constructor
+
+var d = new Function("a","b","alert('sum = ' + (a+b).toString());");
+d(10,20);
+
+With Multiple parameter
+
+var d = new Function("a,b,c,d","alert('sum = ' + (a+b+c+d).toString());");
+d(10,20,30,40);

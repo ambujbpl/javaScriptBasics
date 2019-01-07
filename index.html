@@ -9,23 +9,26 @@
 </head>
 
 <body>
-  <h1>Function Reassigning using JavaScript Functions</h1>
+  <h1>Array of Function using JavaScript Functions</h1>
 </body>
 <script type="text/javascript">
-  function doProcess(a, b) {
-    function DisplaySum() {
-      alert("Sum is : " + (a + b).toString());
-    }
-
-    DisplaySum();
-    doProcess = function(a, b) {
-      alert("Diff is : " + (a - b).toString());
-    }; // return the New Defination of doProcess function
+  var arr = [];
+  arr[0] = function() {
+    console.log("arr[0] : ", arr[0])
   }
-
-  doProcess(10, 40); // add two number
-  doProcess(10, 80); // diff two number
-  doProcess(10, 10); // diff two number
+  arr[1] = function() {
+    console.log("arr[1] : ", arr[1])
+  }
+  arr[2] = function() {
+    console.log("arr[2] : ", arr[2])
+  }
+  arr[0]();
+  arr[1]();
+  arr[2]();
+  if (typeof arr[2] === "function") {
+    alert("I am function");
+    arr[2]();
+  }
 </script>
 
 </html>

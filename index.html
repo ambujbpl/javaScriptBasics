@@ -9,26 +9,20 @@
 </head>
 
 <body>
-  <h1>Array of Function using JavaScript Functions</h1>
+  <h1>Attaching Function to Events using JavaScript Functions</h1>
+  <input type="button" value="This is first Btn" id="fBtn">
+  <input type="button" value="This is Second Btn" id="sBtn" onclick="AttachedEvent()">
 </body>
-<script type="text/javascript">
-  var arr = [];
-  arr[0] = function() {
-    console.log("arr[0] : ", arr[0])
-  }
-  arr[1] = function() {
-    console.log("arr[1] : ", arr[1])
-  }
-  arr[2] = function() {
-    console.log("arr[2] : ", arr[2])
-  }
-  arr[0]();
-  arr[1]();
-  arr[2]();
-  if (typeof arr[2] === "function") {
-    alert("I am function");
-    arr[2]();
-  }
-</script>
+  <script type="text/javascript">
+    function AttachedEvent() {
+      var fBtn = document.getElementById("fBtn");
+      if (fBtn) {
+        fBtn.onclick = function() {
+          alert("Now i am btn 3");
+        }
+        fBtn.value = "Now This is Third Btn";
+      }
+    }
+  </script>
 
 </html>

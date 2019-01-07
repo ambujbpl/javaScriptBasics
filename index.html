@@ -9,19 +9,22 @@
 </head>
 
 <body>
-  <h1>Array.map Function using JavaScript Functions</h1>
+  <h1>Nested Function using JavaScript Functions</h1>
   <p>
-    Array.map Function will return a copy of Array with some Array operation.
+    Nested function will not call directly in globly, it will call in local scope only.
+    Means DisplaySum(); will call only inside doProcess() function.
+
   </p>
 </body>
 <script type="text/javascript">
-  function MultyIn(a, i, arr) {
-    return a * a;
+  function doProcess(a, b) {
+    function displaySum() {
+      alert("Sum is : " + (a + b).toString());
+    }
+    displaySum();
   }
-  var arr = [1, 2, 3, 4, 5]
-  alert("Arr arr : " + arr);
-  var b = arr.map(MultyIn);
-  alert("Arr B : " + b);
+  doProcess(10, 30)
+  // displaySum()// it will give error
 </script>
 
 </html>

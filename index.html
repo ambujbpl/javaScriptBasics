@@ -9,60 +9,23 @@
 </head>
 
 <body>
-  <h1>Nested Function using JavaScript Functions</h1>
-  <p>
-    Nested function will not call directly in globly, it will call in local scope only.
-    Means DisplaySum(); will call only inside doProcess() function.
-
-  </p>
+  <h1>Function Reassigning using JavaScript Functions</h1>
 </body>
 <script type="text/javascript">
-  // function doProcess(a,b){
-  // 	function DisplaySum(){
-  // 		alert("Sum is : " + (a + b).toString() );
-  // 	}
-  // 	function DisplayDiff(){
-  // 		alert("Diff is : " + (a - b).toString() );
-  // 	}
-  // 	DisplaySum();
-  // 	return DisplayDiff;// return the function  itself
-  // }
-  //
-  // var a = doProcess(10,40);
-  // a();
-
-  // function doProcess(a,b){
-  // 	function DisplaySum(){
-  // 		alert("Sum is : " + (a + b).toString() );
-  // 	}
-  // 	function DisplayDiff(){
-  // 		alert("Diff is : " + (a - b).toString() );
-  // 	}
-  // 	DisplaySum();
-  // 	return DisplayDiff();// it will execute function but not return function
-  // }
-  //
-  // var a = doProcess(10,40);
-  // console.log("a" ,a)
-
   function doProcess(a, b) {
     function DisplaySum() {
       alert("Sum is : " + (a + b).toString());
     }
 
     DisplaySum();
-    // case : 1
-    //return function(){
-    //	alert("Diff is : " + (a - b).toString() );
-    // };// return the function  itself with old a,b arguments
-    return function(a, b) {
+    doProcess = function(a, b) {
       alert("Diff is : " + (a - b).toString());
-    }; // return the function  itself
+    }; // return the New Defination of doProcess function
   }
 
-  var a = doProcess(10, 40);
-  // a();// it will take old a and b values case 1
-  a(50, 30); // it will take new a and b values
+  doProcess(10, 40); // add two number
+  doProcess(10, 80); // diff two number
+  doProcess(10, 10); // diff two number
 </script>
 
 </html>

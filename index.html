@@ -9,20 +9,26 @@
 </head>
 
 <body>
-  <h1>Attaching Function to Events using JavaScript Functions</h1>
-  <input type="button" value="This is first Btn" id="fBtn">
-  <input type="button" value="This is Second Btn" id="sBtn" onclick="AttachedEvent()">
+  <h1>Closure in JavaScript</h1>
 </body>
-  <script type="text/javascript">
-    function AttachedEvent() {
-      var fBtn = document.getElementById("fBtn");
-      if (fBtn) {
-        fBtn.onclick = function() {
-          alert("Now i am btn 3");
-        }
-        fBtn.value = "Now This is Third Btn";
-      }
+<script type="text/javascript">
+  function generateFun(n) {
+    var current = 0;
+    var max = n;
+    return function() {
+      return (current < max ? current++ : current)
     }
-  </script>
+  }
+
+  var genNow;
+  genNow = generateFun(5);
+  alert(genNow());
+  alert(genNow());
+  alert(genNow());
+  alert(genNow());
+  alert(genNow());
+  alert(genNow());
+  alert(genNow());
+</script>
 
 </html>

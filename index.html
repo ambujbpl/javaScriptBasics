@@ -9,25 +9,26 @@
 </head>
 
 <body>
-  <h1>Array.some Function using JavaScript Functions</h1>
+  <h1>Array.filter Function using JavaScript Functions</h1>
   <p>
-    Array.some Function will return a boolean
-
-    - if any element is even in arr, return true
-    - else it will return false
+    Array.filter Function will return a Matched elements
   </p>
 </body>
 <script type="text/javascript">
   function IsEven(a, i, arr) {
     return ((a % 2 == 0) ? true : false)
   }
-
   var arr = [1, 2, 3, 4, 5]
-  alert(arr.some(IsEven))
+  var filterArr = arr.filter(IsEven)
+  alert("filterArr : " + filterArr);
 
-  alert([10, 20, 48, 58].some(function(a, i, arr) {
+
+  // Or using annominus function
+
+  var filterArr = [10, 20, 49, 58].filter(function(a, i, arr) {
     return ((a % 2 == 0) ? true : false)
-  }))
+  })
+  alert("filterArr : " + filterArr);
 </script>
 
 </html>

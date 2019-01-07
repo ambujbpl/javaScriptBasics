@@ -9,24 +9,25 @@
 </head>
 
 <body>
-  <h1>Callback Function using JavaScript Functions</h1>
+  <h1>Array.every Function using JavaScript Functions</h1>
+  <p>
+    Array every function will return a boolean
+
+    -if arr have all elements is even return true
+    -else any one of element is odd it will return false
+  </p>
 </body>
 <script type="text/javascript">
-  function doSum(a, b, d) { // here d will hold passed function name
-    alert("Sum is : " + (a + b).toString());
-    d(a, b); // callback function
-  }
+  // function IsEven(a, i, arr) {
+  //   return ((a % 2 == 0) ? true : false)
+  // }
+  // var arr = [1, 2, 3, 4, 5]
+  // alert(arr.every(IsEven))
+  // Or Same o/p will gnerate using An Anonymous Function
 
-  function ShowDifference(a, b) {
-    alert("Diff is : " + (a - b).toString());
-  }
-
-  function ShowMulti(a, b) {
-    alert("Multy is : " + (a * b).toString());
-  }
-
-  doSum(10, 20, ShowDifference)
-  doSum(10, 20, ShowMulti)
+  alert([10, 20, 48, 58].every(function(a, i, arr) {
+    return ((a % 2 == 0) ? true : false)
+  }))
 </script>
 
 </html>

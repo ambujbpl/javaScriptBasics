@@ -9,26 +9,19 @@
 </head>
 
 <body>
-  <h1>Array.filter Function using JavaScript Functions</h1>
+  <h1>Array.forEach Function using JavaScript Functions</h1>
   <p>
-    Array.filter Function will return a Matched elements
+    Array.forEach Function will iterate a loop upto Array.length
   </p>
 </body>
 <script type="text/javascript">
-  function IsEven(a, i, arr) {
-    return ((a % 2 == 0) ? true : false)
+  function addIn(a, i, arr) {
+    arr[i] = (a + 1)
   }
   var arr = [1, 2, 3, 4, 5]
-  var filterArr = arr.filter(IsEven)
-  alert("filterArr : " + filterArr);
-
-
-  // Or using annominus function
-
-  var filterArr = [10, 20, 49, 58].filter(function(a, i, arr) {
-    return ((a % 2 == 0) ? true : false)
-  })
-  alert("filterArr : " + filterArr);
+  alert("Before arr : "+ arr);
+  arr.forEach(addIn)
+  alert("After arr : " + arr);
 </script>
 
 </html>

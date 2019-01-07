@@ -9,23 +9,23 @@
 </head>
 
 <body>
-  <h1>Array.every Function using JavaScript Functions</h1>
+  <h1>Array.some Function using JavaScript Functions</h1>
   <p>
-    Array every function will return a boolean
+    Array.some Function will return a boolean
 
-    -if arr have all elements is even return true
-    -else any one of element is odd it will return false
+    - if any element is even in arr, return true
+    - else it will return false
   </p>
 </body>
 <script type="text/javascript">
-  // function IsEven(a, i, arr) {
-  //   return ((a % 2 == 0) ? true : false)
-  // }
-  // var arr = [1, 2, 3, 4, 5]
-  // alert(arr.every(IsEven))
-  // Or Same o/p will gnerate using An Anonymous Function
+  function IsEven(a, i, arr) {
+    return ((a % 2 == 0) ? true : false)
+  }
 
-  alert([10, 20, 48, 58].every(function(a, i, arr) {
+  var arr = [1, 2, 3, 4, 5]
+  alert(arr.some(IsEven))
+
+  alert([10, 20, 48, 58].some(function(a, i, arr) {
     return ((a % 2 == 0) ? true : false)
   }))
 </script>

@@ -9,16 +9,24 @@
 </head>
 
 <body>
-  <h1>Self Executing Function or Self Invoking Function using JavaScript Functions</h1>
-  <h3>We are loading below function for Self Excute</h3>
-  (function(a, b) {
-    alert("The sum is : " + (a + b).toString());
-  })(10, 20);
+  <h1>Callback Function using JavaScript Functions</h1>
 </body>
 <script type="text/javascript">
-  (function(a, b) {
-    alert("The sum is : " + (a + b).toString());
-  })(10, 20);
+  function doSum(a, b, d) { // here d will hold passed function name
+    alert("Sum is : " + (a + b).toString());
+    d(a, b); // callback function
+  }
+
+  function ShowDifference(a, b) {
+    alert("Diff is : " + (a - b).toString());
+  }
+
+  function ShowMulti(a, b) {
+    alert("Multy is : " + (a * b).toString());
+  }
+
+  doSum(10, 20, ShowDifference)
+  doSum(10, 20, ShowMulti)
 </script>
 
 </html>

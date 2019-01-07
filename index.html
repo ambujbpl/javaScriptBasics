@@ -9,26 +9,16 @@
 </head>
 
 <body>
-  <h1>Closure in JavaScript</h1>
+  <h1>Built-in Function Constructor in JavaScript</h1>
 </body>
 <script type="text/javascript">
-  function generateFun(n) {
-    var current = 0;
-    var max = n;
-    return function() {
-      return (current < max ? current++ : current)
-    }
-  }
+  var d = new Function("a", "b", "alert('sum = ' + (a+b).toString());");
+  d(10, 20);
 
-  var genNow;
-  genNow = generateFun(5);
-  alert(genNow());
-  alert(genNow());
-  alert(genNow());
-  alert(genNow());
-  alert(genNow());
-  alert(genNow());
-  alert(genNow());
+  // With Multiple parameter
+
+  var d = new Function("a,b,c,d", "alert('sum = ' + (a+b+c+d).toString());");
+  d(10, 20, 30, 40);
 </script>
 
 </html>

@@ -16,7 +16,6 @@ This Repository shown different types of javascript functions, array and obect w
 15_Attached_Function_to_an_Events:-<br> 
 16_Closure_in_JavaScript:-<br>
 17_Built_in_Function_Constructor:- Built-in Function Constructor in JavaScript<br>
-18_Associate_Array_in_JS:- associative array is nothing but advance javascript object<br>
 
 
 ### 2 JavaScript Array
@@ -26,5 +25,5 @@ This Repository shown different types of javascript functions, array and obect w
 09_Array.forEach_Function:- help to iterate each element inside array.<br>
 10_Array.map_Function:- Help to compute or add any operation in array each elements.<br>
 14_Array_of_Function:- we can refrence any function on array element itself.<br>
-
+18_Associate_Array_in_JS:- associative array is nothing but advance javascript object<br>
 

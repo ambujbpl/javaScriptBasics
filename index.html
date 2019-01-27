@@ -7,25 +7,29 @@
   <title>JavaScript Object</title>
 </head>
 <body>
-  object creation using javascript factory pattern.
+  object creation using javascript prototype pattern.
 </body>
 <script type="text/javascript">
-var peopleFactory = function(name,age,id){
-	var facObj = {};
-	facObj.name = name;
-	facObj.age = age;
-	facObj.id = id;
-	facObj.printFunction = function()
-	{
-		console.log(this.name + ' ,  ' + this.age + ' ,  ' + this.id);
-	}
-return 	facObj;
-}
+var peopleProto = function(){
+};
+peopleProto.prototype.name = "name-less";
+peopleProto.prototype.age = 0;
+peopleProto.prototype.id = 0;
+peopleProto.prototype.printPerson = function(){
+	console.log(this.name + ' , ' + this.age + ' , ' + this.id);
+};
+var person1 = new peopleProto();
+person1.name = "ambuj";
+person1.age = 27;
+person1.id = 101;
 
-var people1 = peopleFactory("ambuj",27,101);
-var people2 = peopleFactory("amit",28,102);
-people1.printFunction();
-people2.printFunction();
+var person2 = new peopleProto();
+person2.name = "amit";
+person2.age = 26;
+person2.id = 102;
 
+person1.printPerson();
+person2.printPerson();
+// Note:- Default value will be prototype value until we didn't overwrite
 </script>
 </html>

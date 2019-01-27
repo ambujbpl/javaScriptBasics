@@ -4,25 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>JavaScript Associative array</title>
+  <title>JavaScript Object</title>
 </head>
 <body>
-  associative array is nothing but advance javascript object.
+  object creation using javascript constructor pattern.
 </body>
 <script type="text/javascript">
-	var arr = [];
-	arr["name"] = "ambuj";
-	arr["sername"] = "dubey";
-	arr["email"] = "ambujdubey@gmail.com";
+var peopleFactoryConstructor = function(name,age,id){
+	var facObj = {};
+	this.name = name;
+	this.age = age;
+	this.id = id;
+	this.printFunction = function()
+	{
+		console.log(this.name + ' ,  ' + this.age + ' ,  ' + this.id);
+	}
+}
 
-	// associative array is nothing but advance javascript object
-
-	// means these kind of array can access both way
-	// 1 Array access way
-	console.log(arr["name"]);
-
-	// 2 object access way
-	console.log(arr.name);
+var people1 = new peopleFactoryConstructor("ambuj",27,101);
+var people2 = new peopleFactoryConstructor("dubey",28,102);
+people1.printFunction();
+people2.printFunction();
 
 </script>
 </html>

@@ -7,22 +7,23 @@
   <title>JavaScript Object</title>
 </head>
 <body>
-  object creation using javascript constructor pattern.
+  object creation using javascript factory pattern.
 </body>
 <script type="text/javascript">
-var peopleFactoryConstructor = function(name,age,id){
+var peopleFactory = function(name,age,id){
 	var facObj = {};
-	this.name = name;
-	this.age = age;
-	this.id = id;
-	this.printFunction = function()
+	facObj.name = name;
+	facObj.age = age;
+	facObj.id = id;
+	facObj.printFunction = function()
 	{
 		console.log(this.name + ' ,  ' + this.age + ' ,  ' + this.id);
 	}
+return 	facObj;
 }
 
-var people1 = new peopleFactoryConstructor("ambuj",27,101);
-var people2 = new peopleFactoryConstructor("dubey",28,102);
+var people1 = peopleFactory("ambuj",27,101);
+var people2 = peopleFactory("amit",28,102);
 people1.printFunction();
 people2.printFunction();
 

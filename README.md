@@ -17,7 +17,6 @@ This Repository shown different types of javascript functions, array and obect w
 16_Closure_in_JavaScript:-<br>
 17_Built_in_Function_Constructor:- Built-in Function Constructor in JavaScript<br>
 
-
 ### 2 JavaScript Array
 06_Array.every_Function:- it will return true if all elements of array satisfy any specific condition else it will return false.<br>
 07_Array.some_Function:- it will return true if any one elemet of array follow specific condition else it will return false.<br>
@@ -26,4 +25,14 @@ This Repository shown different types of javascript functions, array and obect w
 10_Array.map_Function:- Help to compute or add any operation in array each elements.<br>
 14_Array_of_Function:- we can refrence any function on array element itself.<br>
 18_Associate_Array_in_JS:- associative array is nothing but advance javascript object<br>
+
+### 3 JavaScript Object
+------------------------------------------
+Object creation Pattern In javascriipt
+------------------------------------------
+
+var temp = {}<br>
+or,<br> 
+var temp = new Object;<br><br>
+Both are same mostly use upper one.<br>
 

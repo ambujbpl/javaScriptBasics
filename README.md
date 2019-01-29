@@ -35,6 +35,12 @@ var temp = {}<br>
 or,<br> 
 var temp = new Object;<br><br>
 Both are same mostly use upper one.<br>
+
+Object and Object literal<br>
+	var x = {name:"ambuj",age:27}// This is Object Literal syntex<br>
+	var x = new Object(); // This is old javaScript object initialization statement<br>
+	x.name = "ambuj";<br>
+	x.age = 27;<br>
 19_Object_Factory_Pattern:- object creation using javascript factory pattern.<br>
 20_Object_Constructor_Pattern:- object creation using javascript constructor pattern.<br>
 21_Object_Prototype_Pattern:- object creation using javascript prototype pattern.<br>

@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Javascript Function</title>
 </head>
-
+02_Add_Function_Using_Parameters
 <body>
-  <h1>Add Dynamic Arguments using JavaScript Function</h1>
+  <h1>Add Arguments by passing Parameters in JavaScript Function</h1>
   <h3>We are using below onclick function for add: 10,11,23,14</h3>
   <input type="button" value="Add Dynamic arguments" onclick="ShowSum(10,11,23,14)">
 </body>
   <script type="text/javascript">
-    function ShowSum() {
+    function ShowSum(a,b,c,d) {
       var s = 0;
-      for (var i = 0; i < arguments.length; i++) s += arguments[i]
+      s = a + b + c + d;
       alert("sum is : " + s.toString());
     }
   </script>

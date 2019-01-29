@@ -35,4 +35,8 @@ var temp = {}<br>
 or,<br> 
 var temp = new Object;<br><br>
 Both are same mostly use upper one.<br>
+19_Object_Factory_Pattern:- object creation using javascript factory pattern.<br>
+20_Object_Constructor_Pattern:- object creation using javascript constructor pattern.<br>
+21_Object_Prototype_Pattern:- object creation using javascript prototype pattern.<br>
+22_Object_Dynamic_prototype_Pattern:-  object creation using javascript Dynamic prototype pattern.<br>
 

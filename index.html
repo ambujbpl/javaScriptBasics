@@ -7,29 +7,22 @@
   <title>JavaScript Object</title>
 </head>
 <body>
-  object creation using javascript prototype pattern.
+  object creation using javascript Dynamic prototype pattern.
 </body>
 <script type="text/javascript">
-var peopleProto = function(){
-};
-peopleProto.prototype.name = "name-less";
-peopleProto.prototype.age = 0;
-peopleProto.prototype.id = 0;
-peopleProto.prototype.printPerson = function(){
-	console.log(this.name + ' , ' + this.age + ' , ' + this.id);
-};
-var person1 = new peopleProto();
-person1.name = "ambuj";
-person1.age = 27;
-person1.id = 101;
+var peopleProto = function(name,age,id){
+	this.name = name;
+	this.age = age;
+	this.id = id;
+	if(typeof this.printPerson != "function"){
+		peopleProto.prototype.printPerson = function(){
+			console.log(this.name + ' , ' + this.age + ' , ' + this.id);
+		};
+	}
+}
 
-var person2 = new peopleProto();
-person2.name = "amit";
-person2.age = 26;
-person2.id = 102;
+var person1 = new peopleProto("ajay",32,101);
 
 person1.printPerson();
-person2.printPerson();
-// Note:- Default value will be prototype value until we didn't overwrite
 </script>
 </html>

@@ -5,6 +5,7 @@
 This Repository shown different types of javascript functions, array and obect which will be used on any web based project.
 
 ### 1 JavaScript Function
+00_Function_Statements_and_Function_Expressions:- Function Statements, Function  Expressions, First Class Function->Functional programming and Function Binding<br>
 01_Function_With_Dynamic_Arguments:-  we can pass n number of argument and it will computer using arguments array which is built in javascript feature.<br>
 03_An_Anonymous_Function:- we can make an Anonymous Function, and use it as variable.<br>
 04_Self_Executing_Function_or_Self_Invoking_Function:- function which call and execute itself when javascript load in browser.<br>

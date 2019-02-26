@@ -4,9 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>JavaScript Functions</title>
+  <title>CallBack_async_JS</title>
 </head>
 <body>
-  Checkout All Branches for different types of JavaScript Functions.
+  CallBack Asynchronous Javascript.
+  <div id="bodydiv"></div>
 </body>
+<script>
+const post = [
+  {"name": "post1","msg":"this is first post"},
+  {"name": "post2","msg":"this is second post"}
+]
+
+function getPost(){
+  setTimeout(() => {
+    let output = '';
+    post.forEach((p, index) => {
+      output += `<li>${p.name}</li>`;
+    });
+    var div = document.getElementById('bodydiv');
+    div.innerHTML = output;
+  }, 1000);
+}
+
+function createPost(p,CallBack){
+  setTimeout(() =>{
+    post.push(p)
+    CallBack();
+  },2000)
+}
+// getPost()
+createPost({"name": "post3","msg":"this is third post"}, getPost)
+</script>
 </html>
